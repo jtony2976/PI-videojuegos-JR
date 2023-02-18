@@ -1,3 +1,6 @@
+require("dotenv").config();
+const { API_KEY } = process.env;
+
 //utilizamos axios para hacer el llamado al API
 const axios = require('axios');
 
@@ -7,7 +10,7 @@ const { Genre } = require('../db.js');
 //creando la funcion 'getTodoLosGeneros' con un llamado asyncrono porque estamos usando sequelize
 const getTodoLosGeneros = async () => {
     try {
-      const resultadosDelUrl = await axios.get(`https://api.rawg.io/api/genres?key=4048381c15644c3db8866fcef7795f3b`)
+      const resultadosDelUrl = await axios.get(`https://api.rawg.io/api/genres?key=${API_KEY}`)
       // resultadosDelUrl ---> sera un objeto que tiene una propiedad 'data', la cual tambien es un objeto que tiene
       //                       otra porpiedad llamada 'results' que es un array de objetos y cada objeto tiene 2
       //                       propiedades: id y name (que sera un array con un solo elemento - el nombre del genero)

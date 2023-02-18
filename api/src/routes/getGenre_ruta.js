@@ -5,7 +5,7 @@ const { getTodoLosGeneros } = require('../controllers/getGenres.js');
 
 const router = Router();
 
-router.get('/genres', async (req,res)=>{
+router.get('/', async (req,res)=>{
     try {
         const genres = await getTodoLosGeneros()
         res.status(200).json(genres)

@@ -7,7 +7,7 @@ const router = Router();
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
-router.get('/videogames', async (req,res)=>{
+router.get('/', async (req,res)=>{
     //variable por si se pasa por query el nombre (name) del videojuego para cubrir la ruta
     const {name} = req.query
     try {
@@ -18,10 +18,11 @@ router.get('/videogames', async (req,res)=>{
             if (!InfoByName.length) throw new Error ("No existe el juego")
             res.status(200).json(InfoByName)
         }else{
-            console.log("no se paso nombre por query")
+            //console.log("---- no se paso nombre por query ----")
             //en caso de que no se haya pasado un nombre por query de un juego en particular
             //llamamos el controlador para traernos un listado de los videojuegos
-            const listadoVideojuegos = await getListadoVideojuegos()
+            let listadoVideojuegos = await getListadoVideojuegos()
+
             res.status(200).json(listadoVideojuegos)
         }
     } catch (error) {
@@ -29,7 +30,5 @@ router.get('/videogames', async (req,res)=>{
     }
 
 })
-
-
 
 module.exports = router;
