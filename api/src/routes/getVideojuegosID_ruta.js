@@ -6,7 +6,7 @@ const router = Router();
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
-router.get('/videogames/:id', async (req,res)=>{
+router.get('/videogame/:id', async (req,res)=>{
     const {id} = req.params
     
     try {

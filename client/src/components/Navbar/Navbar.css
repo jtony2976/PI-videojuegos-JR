@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;1,500;1,700&display=swap');
+
+/* Todo el recuadro  */
+.navBar {
+    background-color: #0f0f48;  /* color de fondo del nav */
+    display: flex;
+    align-items: center;  /* como el flex esta en row, acomoda el <a> y el <div> a l o */
+    gap: 2rem;  /* espacio entre el <a> y el <div> */
+    padding: 0 1rem;   /* espacio en las orillas del nav */
+    border: 1mm ridge red;
+    border-style: solid;
+}
+
+/* Las medidas de los 5 div (rectangulos) que son Nombre de la app, Home, Search, Create y About */
+.navBar div {
+  width: 20%;
+  height: 20%;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+h3 {
+  color: rgb(18, 15, 202);
+}
+
+.videogames h3 {
+  color: yellowgreen;
+  font-size: 2rem;
+  font-family: 'RocknRoll One', sans-serif;
+}
+
+.home-bar, .create, .about h3 {
+  font-size: 2rem; 
+  font-family: 'Bowlby One SC';
+}
+
+.home-bar:hover {
+  background-color: #0c0202;
+}
+
+.create:hover {
+  background-color: #0c0202;
+}
+
+.about:hover {
+  background-color: #0c0202;
+}
+
+.searchbar {
+  display: flex;
+}
+
+.searchbar input {
+  height: 165%;
+  background-color: rgb(0, 0, 0);
+  color: #ffffff;
+  border-radius: 5px 0px 0px 5px;
+  border: 3px solid white;
+}
+
+.searchbar form button {
+  height: 170%;
+  border-radius: 0px 5px 5px 0px;
+  border: 1px solid white;
+  background-color: white;
+}
+
+.searchbar input:hover {
+  cursor: pointer;
+}
+
+.searchbar form button:hover {
+  cursor: pointer;
+  text-shadow:  0 5px #fff0;
+}
+
+@media screen and (max-width: 1000px) {
+    .navBar {
+        flex-direction: column;
+    }
+}
